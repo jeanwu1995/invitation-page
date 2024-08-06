@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Invitation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    color: #333;
+  }
+  p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  select {
+    padding: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>You're Invited!</h1>
+  <p>Hi [Name],<br><br>
+    I would love to spend an evening with you. How about we grab dinner at that new Italian place downtown?<br><br>
+    Date: [Date]<br>
+    Time: [Time]<br><br>
+    Let me know if you're free!<br><br>
+    Looking forward to it,<br>
+    [Your Name]
+  </p>
+  
+  <form id="rsvpForm">
+    <label for="response">Will you attend?</label><br>
+    <select id="response" name="response">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+    <button type="submit">RSVP</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const response = document.getElementById("response").value;
+    if (response === "yes") {
+      window.location.href = "confirmation_page.html";
+    } else if (response === "no") {
+      alert("No is not an option here.");
+    }
+  });
+</script>
+
+</body>
+</html>
