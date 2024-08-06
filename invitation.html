@@ -12,13 +12,14 @@
     margin: 0;
     padding: 0;
   }
-  .container {
-    max-width: 600px;
+  .card {
+    max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
+    background: url('https://t4.ftcdn.net/jpg/02/33/04/59/360_F_233045975_HMqa0XB6bwkeBNRKvYLVWOUlE5Sx8h7F.jpg') center center/cover no-repeat;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
   }
   h1 {
     color: #333;
@@ -44,15 +45,15 @@
 </head>
 <body>
 
-<div class="container">
+<div class="card">
   <h1>You're Invited!</h1>
-  <p>Hi [Name],<br><br>
+  <p>Hi Julien,<br><br>
     I would love to spend an evening with you. How about we grab dinner at that new Italian place downtown?<br><br>
-    Date: [Date]<br>
-    Time: [Time]<br><br>
+    Date: 2024/08/10<br>
+    Time: 6:30pm<br><br>
     Let me know if you're free!<br><br>
     Looking forward to it,<br>
-    [Your Name]
+    Jean
   </p>
   
   <form id="rsvpForm">
@@ -66,13 +67,14 @@
 </div>
 
 <script>
-  document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+  document.getElementById('rsvpForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const response = document.getElementById("response").value;
-    if (response === "yes") {
-      window.location.href = "confirmation_page.html";
-    } else if (response === "no") {
-      alert("No is not an option here.");
+    var response = document.getElementById('response').value;
+    if(response === 'yes') {
+      alert("Please call Jean at 92962646 now to make the confirmation.");
+      window.location.href = "confirmation-page.html"; // Redirect to confirmation page
+    } else if(response === 'no') {
+      alert("Sorry, no is not an option. Please go back and select 'Yes'.");
     }
   });
 </script>
